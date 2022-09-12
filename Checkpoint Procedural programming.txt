@@ -1,0 +1,76 @@
+ 1.24 KB
+
+PROCEDURE write_v1(VAR v1: vector_of INTEGER, n:INTEGER);
+VAR
+    i:INTEGER;
+BEGIN
+    FOR i FROM 0 TO n-1  DO
+        write ("write element de tableau v1 indice ",i);
+        i:=i+1;
+    END_FOR
+END
+
+PROCEDURE write_v2(VAR v2: array_of INTEGER, n:INTEGER)
+VAR
+    i:INTEGER;
+BEGIN
+    FOR i FROM 0 TO n-1 DO
+        write ("write element de tableau v2 indice ",i);
+        i:=i+1;
+
+    END_FOR
+END
+
+PROCEDURE read_v1(VAR v1: array_of INTEGER, n:INTEGER)
+VAR
+    i:INTEGER;
+BEGIN
+    FOR i FROM 0 TO n-1  DO
+        read (v1[i]);
+        i:=i+1;
+    END_FOR
+END
+
+
+PROCEDURE read_v2(VAR v2: array_of INTEGER, n:INTEGER)
+VAR
+    i:INTEGER;
+BEGIN
+    FOR i FROM 0 TO n-1 DO
+        read (V2[i]);
+        i:=i+1;
+    END_FOR
+END
+
+
+
+
+
+PROCEDURE dotproduct(VAR PS:INTEGER ,v1:array_of INTEGER , v2:array_of INTEGER, n:INTEGER)
+VAR
+    i:INTEGER
+BEGIN
+    IF (n MOD 2 = 0) THEN
+        FOR i FROM 0 TO n-1  DO
+            ps:= v1[i] * v2[i];
+            i:=i+1;
+        END_FOR
+    ELSE    
+        write ("entrer la dimention des tableaux")
+    END_IF
+        
+    
+END
+
+
+ALGORITHM  dot_product
+VAR
+   i,n: INTEGER;
+   V1, V2: array_of INTEGER [500]
+BEGIN
+    write_v1(v1, n);
+    write_v2(v2, n);
+    read_v1 (v1, n);
+    read_v2(v2, n);
+    dotproduct(PS, v1, v2,n);
+END
